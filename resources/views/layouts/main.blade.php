@@ -24,6 +24,24 @@
 
     const loggedUser = {!! auth()->user()->toJson() !!};
     console.log(loggedUser)
+
+    // Navigation
+
+
+
+    const menu = document.querySelector(".navigation__menu")
+    const menuContent = document.querySelector(".navigation__dropcontent")
+
+
+    menu.addEventListener("click", () => {
+      console.log(menuContent.style.display)
+      
+      if (menuContent.style.display == "none") {
+        menuContent.style.display = "block"
+      } else {
+        menuContent.style.display = "none"
+      }
+    })
     
   </script>
       
