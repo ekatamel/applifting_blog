@@ -8,6 +8,10 @@
         flex-direction: column;
         row-gap: 2rem;
         margin-bottom: 10em;
+
+        @media screen and (max-width: 1059px) {
+            align-items: center;
+        }
     }
 
     &__title {
@@ -116,7 +120,7 @@
         border-radius: 4px;
         resize: none;
         font-family: inherit;
-        height: 150px;
+        height: 100px;
         margin-top: 0.5em;
         padding: 8px 16px;
         font-size: 20px;
@@ -126,6 +130,15 @@
 
     &__image {
         width: 112px;
+        height: auto;
+        border: 1px solid lightgrey;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    &__image-preview {
+        width: 112px;
+        height: auto;
         border: 1px solid lightgrey;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
@@ -141,5 +154,12 @@
         font-family: inherit;
         color: #dc3545;
         font-size: 1em;
+    }
+}
+
+.preview {
+    &__text {
+        font-style: italic;
+        font-size: 0.8em;
     }
 }

@@ -37,8 +37,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-        "title" => "required",
-        "perex" => "required",
+        "title" => "required|unique:articles|max:100",
+        "perex" => "required||max:300",
         "content" => "required|min:50",
         "user_id" => "required"
       ]);
@@ -60,6 +60,7 @@ class ArticleController extends Controller
       // } else {
       //   $article->perex = $article->content;
       // }
+      
 
       $article->save();
 
@@ -93,8 +94,8 @@ class ArticleController extends Controller
     {
       // dd($request);
       $this->validate($request, [
-        "title" => "required",
-        "perex" => "required",
+        "title" => "required|max:100",
+        "perex" => "required|max:500",
         "content" => "required|min:50",
         "user_id" => "required"
       ]);
@@ -107,14 +108,6 @@ class ArticleController extends Controller
       $article->title = $request->input("title");
       $article->content = $request->input("content");
       $article->perex = $request->input("perex");
-
-      // if (count($perex) > 2) {
-      //   $article->perex = $perex[1] . " " . $perex[2]; 
-      // } else if (count($perex) > 1) {
-      //   $article->perex = $perex[1]; 
-      // } else {
-      //   $article->perex = $article->content;
-      // }
 
 
       $article->save();

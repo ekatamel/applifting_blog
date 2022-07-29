@@ -74,11 +74,12 @@ function ArticleDetail() {
                                 key={i}
                                 title={art.title}
                                 perex={art.perex}
+                                id={art.id}
                             />
                         );
                     })}
             </div>
-            <div className="comments">
+            <div className="comments__container">
                 {article && (
                     <>
                         <CommentList articleId={article.id} />

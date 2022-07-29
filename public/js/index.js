@@ -2156,6 +2156,103 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/components/About.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/components/About.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AboutBox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutBox */ "./resources/js/components/AboutBox.jsx");
+/* harmony import */ var _data_aboutInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/aboutInfo */ "./resources/js/data/aboutInfo.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function About() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "about",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+      className: "about__maintitle",
+      children: "Welcome to Applifting blog!"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      className: "about__subtitle",
+      children: "Here you can..."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "about__content",
+      children: _data_aboutInfo__WEBPACK_IMPORTED_MODULE_1__["default"].map(function (info, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_AboutBox__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          data: info
+        }, index);
+      })
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
+
+/***/ }),
+
+/***/ "./resources/js/components/AboutBox.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/AboutBox.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function AboutBox(_ref) {
+  var data = _ref.data;
+  var imageUrl = data.imageUrl,
+      title = data.title,
+      activities = data.activities,
+      link = data.link;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "about__box",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      className: "about__image",
+      src: imageUrl,
+      alt: ""
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+      className: "about__heading",
+      children: title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
+      className: "about__list",
+      children: activities.map(function (activity, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+          className: "about__item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+            className: "about__icon",
+            src: "/images/icons/checked.png",
+            alt: ""
+          }), activity]
+        }, index);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      className: "about__button",
+      href: link,
+      children: "Start now"
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutBox);
+
+/***/ }),
+
 /***/ "./resources/js/components/App.jsx":
 /*!*****************************************!*\
   !*** ./resources/js/components/App.jsx ***!
@@ -2171,9 +2268,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ArticleList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ArticleList */ "./resources/js/components/ArticleList.jsx");
 /* harmony import */ var _ArticleDetail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ArticleDetail */ "./resources/js/components/ArticleDetail.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About */ "./resources/js/components/About.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2183,15 +2282,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+          path: "/",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_About__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
           path: "/articles/:id",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ArticleDetail__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ArticleDetail__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
           path: "/articles",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ArticleList__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ArticleList__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         })]
       })
     })
@@ -2450,11 +2552,12 @@ function ArticleDetail() {
       }), relatedArticles && relatedArticles.map(function (art, i) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_RelatedArticle__WEBPACK_IMPORTED_MODULE_3__["default"], {
           title: art.title,
-          perex: art.perex
+          perex: art.perex,
+          id: art.id
         }, i);
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "comments",
+      className: "comments__container",
       children: article && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CommentList__WEBPACK_IMPORTED_MODULE_4__["default"], {
           articleId: article.id
@@ -2613,7 +2716,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Comment(_ref) {
   var comment = _ref.comment,
-      votesCount = _ref.votesCount;
+      votesCount = _ref.votesCount,
+      loadComments = _ref.loadComments;
   var content = comment.content,
       date = comment.created_at,
       user = comment.user,
@@ -2653,19 +2757,20 @@ function Comment(_ref) {
               _context.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/comments/".concat(id, "/votes"), {
                 votes: votesNumber,
-                user_id: user.id,
+                user_id: loggedUser.id,
                 value: voteValue
               });
 
             case 3:
               response = _context.sent;
+              loadComments();
               _context.next = 10;
               break;
 
-            case 6:
-              _context.prev = 6;
+            case 7:
+              _context.prev = 7;
               _context.t0 = _context["catch"](0);
-              console.log(_context.t0.response);
+              // console.log(error.response);
               setErrors(_context.t0.response.data.errors);
 
             case 10:
@@ -2673,7 +2778,7 @@ function Comment(_ref) {
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 6]]);
+      }, _callee, null, [[0, 7]]);
     }));
 
     return function sendVotes() {
@@ -2807,6 +2912,11 @@ function CommentList(_ref) {
       commentText = _useState4[0],
       setCommentText = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      errors = _useState6[0],
+      setErrors = _useState6[1];
+
   var loadComments = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var response, responseData;
@@ -2857,15 +2967,16 @@ function CommentList(_ref) {
               // setCommentResponse(response);
               loadComments();
               setCommentText("");
-              _context2.next = 12;
+              _context2.next = 13;
               break;
 
             case 9:
               _context2.prev = 9;
               _context2.t0 = _context2["catch"](1);
               console.log(_context2.t0.response);
+              setErrors(_context2.t0.response.data.errors);
 
-            case 12:
+            case 13:
             case "end":
               return _context2.stop();
           }
@@ -2908,9 +3019,9 @@ function CommentList(_ref) {
             className: "comment__avatar",
             src: loggedUser.path,
             alt: loggedUser.name
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "comment__content",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
               action: "/api/comments",
               method: "post",
               onSubmit: handleSubmit,
@@ -2921,15 +3032,22 @@ function CommentList(_ref) {
                 onChange: function onChange(e) {
                   setCommentText(e.target.value);
                 },
-                value: commentText
+                value: commentText,
+                required: true
               })
-            })
+            }), errors && Object.values(errors).map(function (value) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "message__error",
+                children: value
+              });
+            })]
           })]
         })
       }), comments && comments.map(function (comment, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Comment__WEBPACK_IMPORTED_MODULE_2__["default"], {
           comment: comment,
-          votesCount: comment.votes
+          votesCount: comment.votes,
+          loadComments: loadComments
         }, index);
       })]
     })]
@@ -2987,20 +3105,56 @@ __webpack_require__.r(__webpack_exports__);
 
 function RelatedArticle(_ref) {
   var title = _ref.title,
-      perex = _ref.perex;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "related__article",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-      className: "related__title",
-      children: title
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "related__perex",
-      children: (0,markdown_to_txt__WEBPACK_IMPORTED_MODULE_0__["default"])(perex)
-    })]
+      perex = _ref.perex,
+      id = _ref.id;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+    className: "related__link",
+    href: "/articles/" + id,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "related__article",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+        className: "related__title",
+        children: title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "related__perex",
+        children: (0,markdown_to_txt__WEBPACK_IMPORTED_MODULE_0__["default"])(perex)
+      })]
+    })
   });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RelatedArticle);
+
+/***/ }),
+
+/***/ "./resources/js/data/aboutInfo.js":
+/*!****************************************!*\
+  !*** ./resources/js/data/aboutInfo.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var aboutInfo = [{
+  imageUrl: "/images/general/article-list.png",
+  title: "Read articles on cat topics",
+  activities: ["View latest publications", "Read and learn new facts", "Find out more about cats", "Start understanding your cat behavior"],
+  link: "/articles"
+}, {
+  imageUrl: "/images/general/comment-list.png",
+  title: "Engage in discussions",
+  activities: ["Comment on the article", "Find out what other think", "Share your thought", "Vote on comments you like"],
+  link: "/articles"
+}, {
+  imageUrl: "/images/general/new-article.png",
+  title: "Create your own article",
+  activities: ["Sign in and start creation", "Create, edit and publish your articles", "Use markdown editor for easy writing", "And cute cat images to your article"],
+  link: "/admin/articles/create"
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (aboutInfo);
 
 /***/ }),
 

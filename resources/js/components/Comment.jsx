@@ -3,7 +3,7 @@ import axios from "axios";
 import Moment from "react-moment";
 import useFirstRender from "./FirstRender";
 
-function Comment({ comment, votesCount }) {
+function Comment({ comment, votesCount, loadComments }) {
     const { content, created_at: date, user, votes, id } = comment;
     const [votesNumber, setVotesNumber] = useState(votes);
     const [voteValue, setVoteValue] = useState(null);
@@ -16,11 +16,12 @@ function Comment({ comment, votesCount }) {
         try {
             const response = await axios.post(`/api/comments/${id}/votes`, {
                 votes: votesNumber,
-                user_id: user.id,
+                user_id: loggedUser.id,
                 value: voteValue,
             });
+            loadComments();
         } catch (error) {
-            console.log(error.response);
+            // console.log(error.response);
             setErrors(error.response.data.errors);
         }
     };

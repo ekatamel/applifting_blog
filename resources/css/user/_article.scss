@@ -1,6 +1,13 @@
 .article {
     display: flex;
     column-gap: 24px;
+    flex-direction: row;
+
+    @media screen and (max-width: 1059px) {
+        flex-direction: column;
+        row-gap: 24px;
+        width: 272px;
+    }
 
     &__main {
         display: flex;

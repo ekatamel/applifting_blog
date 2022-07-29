@@ -1,5 +1,5 @@
-.comments {
-    // width: 65.8%;
+.comments__container {
+    width: 65.8%;
     // margin: 0;
 }
 
@@ -8,8 +8,8 @@
     align-items: flex-start;
     column-gap: 28px;
     margin-bottom: 24px;
-    width: 65.8%;
-    // width: 100%;
+    // width: 65.8%;
+    width: 100%;
 
     &__user {
         font-size: 1rem;

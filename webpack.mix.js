@@ -44,6 +44,7 @@ mix
 mix.sass("resources/css/app.scss", "public/css");
 mix.js("resources/js/index.js", "public/js").react();
 mix.js("resources/js/markdown.js", "public/js");
+mix.js("resources/js/preview.js", "public/js");
 // mix.sass("resources/css/users-app.scss", "public/css");
 // mix.sass('resources/css/app.scss', 'public/css');
 // mix.js('resources/js/library.js', 'public/js');

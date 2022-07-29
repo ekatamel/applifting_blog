@@ -5,6 +5,7 @@ import Comment from "./Comment";
 function CommentList({ articleId }) {
     const [comments, setComments] = useState(null);
     const [commentText, setCommentText] = useState("");
+    const [errors, setErrors] = useState(null);
 
     const loadComments = async () => {
         const response = await axios.get(`/api/articles/${articleId}/comments`);
@@ -26,6 +27,7 @@ function CommentList({ articleId }) {
             setCommentText("");
         } catch (error) {
             console.log(error.response);
+            setErrors(error.response.data.errors);
         }
     };
 
@@ -77,8 +79,17 @@ function CommentList({ articleId }) {
                                             setCommentText(e.target.value);
                                         }}
                                         value={commentText}
+                                        required
                                     />
                                 </form>
+                                {errors &&
+                                    Object.values(errors).map((value) => {
+                                        return (
+                                            <div className="message__error">
+                                                {value}
+                                            </div>
+                                        );
+                                    })}
                             </div>
                         </>
                     )}
@@ -90,6 +101,7 @@ function CommentList({ articleId }) {
                                 key={index}
                                 comment={comment}
                                 votesCount={comment.votes}
+                                loadComments={loadComments}
                             />
                         );
                     })}

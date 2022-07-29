@@ -64,6 +64,11 @@ class ApiController extends Controller
           "duplicate" => ['You have been voted on this comment!']
         ]],422);
       } else {
+        $this->validate($request, [
+          "votes" => "required|numeric",
+          "user_id" => "required",
+          "value" => "required|numeric"
+        ]);
         $vote = new Vote;
         $vote->user_id = $user->id;
         $vote->comment_id = $comment->id;
@@ -72,19 +77,23 @@ class ApiController extends Controller
         $vote->save();
       }
 
-
-      
-
       $comment->votes = $request->input("votes");
       
       $comment->save();
 
-      // Return 200 response
+      response()->json(['success' => 'success', 200]);
       
     }
 
     public function storeComment(Request $request)
     {
+      $this->validate($request, [
+        "article_id" => "required",
+        "user_id" => "required",
+        "content" => "required|min:5|max:300"
+      ]);
+      
+      
       $comment = new Comment;
       $comment->article_id = $request->input("article_id");
       $comment->user_id = $request->input("user_id");
@@ -93,6 +102,6 @@ class ApiController extends Controller
 
       $comment->save();
 
-      // Return 200 response
+      response()->json(['success' => 'success', 200]);
     }
 }

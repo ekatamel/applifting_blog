@@ -27,7 +27,7 @@
   @error('title')
     <div class="message__error">{{ $message }}</div >
   @enderror
-  <input class="articles__input" id="title" type="text" placeholder="My First Article" name="title" value="{{old("title", $article->title)}}">
+  <input class="articles__input" id="title" type="text" placeholder="My First Article" name="title" value="{{old("title", $article->title)}}" required>
 
   <label for="perex" class="articles__label">Perex</label>
   @error('perex')
@@ -36,17 +36,25 @@
   {{-- <input class="articles__input" id="perex" type="text" placeholder="My First Perex" name="perex" value="{{old("perex", $article->perex)}}"> --}}
 
 
-  <textarea class="articles__textarea" name="perex" id="perex" placeholder="My first perex">{{old("content", $article->perex)}}</textarea>
+  <textarea class="articles__textarea" name="perex" id="perex" placeholder="My first perex" required>{{old("content", $article->perex)}}</textarea>
 
   
 
   @if ($article->id && $article->image)
   <label class="articles__label" for="image">Featured image</label>
+  <div class="preview">
+    {{-- <p class="preview__text">No files currently selected for upload</p> --}}
+  </div>
     <img class="articles__image" src="{{$article->image->path}}" alt="Article image">
 
     <div class="articles__buttons">
-      <label for="file" class="articles__upload--new">Upload an image</label>
+      <label for="file" class="articles__upload--new">Upload a new image</label>
+
+
     <input class="articles__input" id="file" type="file" name="uploaded_file" style="display: none;">
+
+
+
 
 
     <a href="{{route("image.destroy", $article->image->id)}}"><button class="articles__delete"  type="button">Delete</button></a>
@@ -57,19 +65,17 @@
   @else 
 
   <label class="articles__label" for="image">Featured image</label>
+  <div class="preview">
+    <p class="preview__text">No files currently selected for upload</p>
+  </div>
   <label for="file" class="articles__upload">Upload an image</label>
   <input class="articles__input" id="file" type="file" name="uploaded_file" style="display: none;">
+  
 
   {{-- <label for="image_name">Image name</label>
   <input id="image_name" type="text" name="name" value="" placeholder="Image description">  --}}
   @endif
 
-
-  {{-- <label class="articles__label" for="content">Content</label>
-  @error('content')
-    <div class="message__error">{{ $message }}</div >
-  @enderror
-  <textarea class="articles__textarea" name="content" id="content" placeholder="Supports markdown. Yay!">{{old("content", $article->content)}}</textarea> --}}
 
       {{-- Creating markdown --}}
     @error('content')
@@ -100,4 +106,6 @@
 </div>
 
 <script src="{{ mix('js/markdown.js') }}" ></script>
+<script src="{{mix('js/preview.js')}}"></script>
 @endsection
+
