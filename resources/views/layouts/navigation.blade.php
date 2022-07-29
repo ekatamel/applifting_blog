@@ -11,7 +11,28 @@
   <div class="navigation--right">
       @guest
       <a class="navigation__link navigation__link--blue" href="/login">Log in<img class="navigation__icon" src="/images/icons/arrow.png" alt=""></a>   
+
+    
+
+      
       @endguest
+      {{-- Dropdown content for small screens --}}
+      <div class="navigation__dropdown">
+        <div class="navigation__profile">
+          <span>Menu</span>
+          <img src="/images/icons/arrow-bottom.png" alt="Arrow icon">
+        </div>
+        <div class="navigation__dropcontent">
+          <a class="navigation__link navigation__menu" href="/articles">Recent Articles</a>
+          <a class="navigation__link navigation__menu" href="/">About</a>
+          @auth
+          <a class="navigation__link navigation__menu" href="{{route("articles.display")}}">My Articles</a>
+           <a class="navigation__link navigation__menu" href="{{route("articles.create")}}">Create Article</a>
+          @endauth
+        </div>
+        
+      </div>
+
       @auth
       <a class="navigation__link" href="{{route("articles.display")}}">My Articles</a>
       <a class="navigation__link navigation__link--blue" href="{{route("articles.create")}}">Create Article</a>

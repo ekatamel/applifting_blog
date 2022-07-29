@@ -1,6 +1,11 @@
 .navigation {
     height: 56px;
 
+    &__menu {
+        display: block;
+        padding: 1em;
+    }
+
     &__avatar {
         width: 32px;
         height: 32px;
@@ -18,8 +23,13 @@
     &--left,
     &--right {
         display: flex;
+        // flex-wrap: wrap;
         align-items: center;
         column-gap: 40px;
+
+        // @media screen and (max-width: 942) {
+        //   flex
+        // }
     }
 
     &__link {
