@@ -1,0 +1,28 @@
+.related {
+    width: 29%;
+    &__headline {
+        margin-top: 30px;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-size: 1em;
+        font-weight: 500;
+        margin-bottom: 8px;
+        line-height: 20px;
+    }
+
+    &__perex {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        margin: 0 0 24px 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}
