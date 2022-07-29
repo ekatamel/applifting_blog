@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Comment from "./Comment";
@@ -44,7 +46,7 @@ function CommentList({ articleId }) {
                     Comments ({comments.length})
                 </h2>
             )}
-            <div className="comments">
+            <div className="comments" data-testid="comment-list">
                 <div className="comment">
                     {typeof loggedUser == "undefined" ? (
                         <>

@@ -1,10 +1,10 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 import Moment from "react-moment";
-import ReactMarkdown from "react-markdown";
 import markdownToTxt from "markdown-to-txt";
 
 function Article({ data }) {
     const {
-        content,
         created_at: publishDate,
         perex,
         title,
@@ -16,7 +16,7 @@ function Article({ data }) {
     console.log(image);
 
     return (
-        <div className="article">
+        <div className="article" data-testid="article">
             {image ? (
                 <div
                     className="article__image"

@@ -1,8 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 function AboutBox({ data }) {
     const { imageUrl, title, activities, link } = data;
 
     return (
-        <div className="about__box">
+        <div className="about__box" data-testid="about-box">
             <img className="about__image" src={imageUrl} alt="" />
             <h3 className="about__heading">{title}</h3>
             <ul className="about__list">

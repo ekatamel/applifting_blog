@@ -1,9 +1,12 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 import AboutBox from "./AboutBox";
 import aboutInfo from "../data/aboutInfo";
 
 function About() {
     return (
-        <div className="about">
+        <div className="about" data-testid="about">
             <h1 className="about__maintitle">Welcome to Applifting blog!</h1>
             <h2 className="about__subtitle">Here you can...</h2>
             <div className="about__content">
