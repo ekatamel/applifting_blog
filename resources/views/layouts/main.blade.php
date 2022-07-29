@@ -34,7 +34,6 @@
 
 
     menu.addEventListener("click", () => {
-      console.log(menuContent.style.display)
       
       if (menuContent.style.display == "none") {
         menuContent.style.display = "block"
