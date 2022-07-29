@@ -1,5 +1,6 @@
 ## About this project
 
+Project URL: blog.ekaterinamelnichuk.com
 Applifting Blog was made in order to fulfill requirements of the assignment as part of job application process.
 
 The basic user functionality of the website includes:
@@ -23,8 +24,8 @@ PHP & Laravel:
 -   setting up database
 -   creating DB migrations
 -   defining DB models and relationships
--   seeding the database with article, comments, image, user data
--   exposing API endpoints for frontend
+-   seeding the database with article, comments, votes,image, user data
+-   exposing API endpoints for frontend usage
 -   user authentication (Fortify)
 -   routing for admin interface
 -   returning admin pages (Laravel blade templates)
@@ -49,7 +50,7 @@ Additional React libraries:
 Javascript:
 
 -   markdown.js -> getting markdown content from the editor and adding to a hidden form element to be send with form submit
--   showing preview of the uploaded image to the article
+-   preview.js -> showing preview of the uploaded image to the article
 
 Sass:
 
@@ -66,23 +67,23 @@ Compiling:
 
 ## API
 
-API endpoints for the frontend are defined in ApiController.php file. Routes for these endpoints are porvided in api.php.
+API endpoints for the frontend are defined in ApiController.php file. Routes for these endpoints are provided in api.php.
 
 API documentation is available at : https://app.swaggerhub.com/apis-docs/KATERINKAMELNICHUK/Blog/1.0.0
 
 ## Possible impovements
 
 -   Create article form - retrieving old image from previous request, if form validation fails (currently the user has to upload the same image again)
--   Enable outside registrations - currenty outside registration are disabled and only specified users can login
+-   Enable outside registrations - currenty outside registration are disabled and only existing registered users can login
 -   Implement nested comments
--   Add fulltext search of related articles based on the main keyword. Currenly keyword "cat" is hardcoded inside API URL (/articles/{keyword}) and fulltext search is done in articles title. As a potential future impovement, related articles could be retrieved dynamically based on article categories/tags
+-   Add fulltext search of related articles based on the main article keyword. Currenly keyword "cat" is hardcoded inside API URL (/articles/{keyword}) and fulltext search is done in articles title. As a potential future impovement, related articles could be retrieved dynamically based on article categories/tags keywords
 -   Adding admin homepage with statistics about user activity (number of blog posts, user engagement etc.)
 -   Implement articles sorting alphabetically or based on the date (https://blog.ekaterinamelnichuk.com/admin/articles)
 -   Disable voting on own comments
 
 ## Domain & hosting
 
-The website is hosted on Hostinger hosting provider (blog subdomain) on my personal domain ekaterinamelnichuk.com.
+The website is hosted on Hostinger hosting provider on my personal domain ekaterinamelnichuk.com (blog subdomain).
 
 ## Domain & hosting
 
