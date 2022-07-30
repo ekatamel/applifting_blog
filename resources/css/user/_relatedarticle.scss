@@ -1,5 +1,8 @@
 .related {
     width: 29%;
+    @media screen and (max-width: 1309px) {
+        display: none;
+    }
     &__headline {
         margin-top: 30px;
         margin-bottom: 2rem;

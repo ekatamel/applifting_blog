@@ -15,23 +15,21 @@
         flex-wrap: wrap;
         column-gap: 49px;
         margin-top: 64px;
-        padding: 0 221px 0 224px;
+        padding: 0 14%;
     }
 
     &__container {
         width: 65.8%;
+        @media screen and (max-width: 1309px) {
+            width: 100%;
+        }
     }
-    // 1155
 
     &__maintitle {
         font-size: 40px;
         font-weight: 500;
         margin: 1rem 0 27px 0;
     }
-
-    // &__detailed {
-    //     width: 760px;
-    // }
 
     &__image {
         width: 272px;
@@ -48,10 +46,12 @@
         }
 
         &--wide {
-            // width: 760px;
             width: 100%;
-
             min-height: 504px;
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                min-height: 180px;
+            }
         }
     }
 
@@ -93,6 +93,12 @@
         line-height: 34px;
         font-size: 20px;
         font-weight: 400;
+        text-align: justify;
+
+        @media screen and (max-width: 600px) {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
     }
 
     &__link {

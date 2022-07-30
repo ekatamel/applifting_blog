@@ -1,5 +1,8 @@
 .comments__container {
     width: 65.8%;
+    @media screen and (max-width: 1309px) {
+        width: 100%;
+    }
     // margin: 0;
 }
 
@@ -8,7 +11,6 @@
     align-items: flex-start;
     column-gap: 28px;
     margin-bottom: 24px;
-    // width: 65.8%;
     width: 100%;
 
     &__user {
