@@ -24,7 +24,6 @@ function CommentList({ articleId }) {
                 user_id: loggedUser.id,
                 content: commentText,
             });
-            // setCommentResponse(response);
             loadComments();
             setCommentText("");
         } catch (error) {
@@ -36,8 +35,6 @@ function CommentList({ articleId }) {
     useEffect(() => {
         loadComments();
     }, []);
-
-    // console.log(typeof user == "undefined");
 
     return (
         <>

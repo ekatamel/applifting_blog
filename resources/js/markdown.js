@@ -1,5 +1,5 @@
+// Code for getting markdown content from the editor and adding to a hidden form element to be send with form submit
 import Editor from "@toast-ui/editor";
-// import "codemirror/lib/codemirror.css";
 import "@toast-ui/editor/dist/toastui-editor.css";
 
 const editor = new Editor({
@@ -14,9 +14,3 @@ document.querySelector("#articles__form").addEventListener("submit", (e) => {
     document.querySelector("#content").value = editor.getMarkdown();
     e.target.submit();
 });
-
-// const markdownText = document.querySelector(".ProseMirror");
-
-// markdownText.addEventListener("keypress", (e) => {
-//     console.log(markdownText.textContent);
-// });

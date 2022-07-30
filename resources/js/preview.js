@@ -1,3 +1,5 @@
+// Code for displaying image preview once uploaded and updating it if image is replaced
+
 const input = document.querySelector("#file");
 const preview = document.querySelector(".preview");
 const previousImage = document.querySelector(".articles__image");
@@ -23,16 +25,6 @@ function validFileType(file) {
     return fileTypes.includes(file.type);
 }
 
-function returnFileSize(number) {
-    if (number < 1024) {
-        return number + "bytes";
-    } else if (number >= 1024 && number < 1048576) {
-        return (number / 1024).toFixed(1) + "KB";
-    } else if (number >= 1048576) {
-        return (number / 1048576).toFixed(1) + "MB";
-    }
-}
-
 function updateImageDisplay() {
     if (previousImage) {
         previousImage.remove();
@@ -52,24 +44,17 @@ function updateImageDisplay() {
         preview.appendChild(imageContainer);
 
         for (const file of curFiles) {
-            // const imageDiv = document.createElement("div");
             const para = document.createElement("p");
             if (validFileType(file)) {
-                // para.textContent = `File name ${
-                //     file.name
-                // }, file size ${returnFileSize(file.size)}.`;
                 const image = document.createElement("img");
                 image.classList.add("articles__image-preview");
                 image.src = URL.createObjectURL(file);
 
                 imageContainer.appendChild(image);
-                // imageDiv.appendChild(para);
             } else {
                 para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
                 imageContainer.appendChild(para);
             }
-
-            // imageContainer.appendChild(imageDiv);
         }
     }
 }

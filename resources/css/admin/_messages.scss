@@ -1,8 +1,8 @@
 .message {
     &__error {
-        color: #8a2932;
-        background-color: #f8d7da;
-        border: 0.5px solid #8a2932;
+        color: $red_danger;
+        background-color: $red_background;
+        border: 0.5px solid $red_danger;
         border-radius: 0.25em;
         padding: 0.5em;
         font-size: 0.8em;
@@ -10,9 +10,9 @@
     }
 
     &__success {
-        color: #0f5132;
-        background-color: #d1e7dd;
-        border: 0.5px solid #0f5132;
+        color: $green_success;
+        background-color: $green_background;
+        border: 0.5px solid $green_success;
         border-radius: 0.25em;
         padding: 0.5em;
         font-size: 0.8em;

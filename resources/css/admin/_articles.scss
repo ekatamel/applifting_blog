@@ -1,6 +1,6 @@
 .articles {
-    margin-top: 48px;
-    padding: 0 228px;
+    margin: 3rem 0;
+    padding: 0 14%;
     // display: flex;
 
     &__container {
@@ -21,6 +21,8 @@
 
     &__headline {
         display: flex;
+        flex-wrap: wrap;
+        row-gap: 2rem;
         align-items: center;
         margin-bottom: 36px;
     }
@@ -29,18 +31,23 @@
         @include button;
     }
 
+    &__table-container {
+        overflow-x: auto;
+    }
+
     &__table {
         border-collapse: collapse;
         table-layout: fixed;
         white-space: nowrap;
         width: 100%;
+        min-width: 900px;
 
         th {
-            border-bottom: 2px solid #dfdfdf;
+            border-bottom: 2px solid $lightgrey;
             // display: flex;
         }
         td {
-            border-bottom: 1px solid #dfdfdf;
+            border-bottom: 1px solid $lightgrey;
         }
     }
 
@@ -83,7 +90,7 @@
         margin-top: 0.5rem;
         margin-bottom: 2em;
         font-size: 20px;
-        color: #6c757d;
+        color: $text_secondary;
     }
 
     &__upload {
@@ -91,7 +98,7 @@
         width: fit-content;
         // width: 147px;
         height: 36px;
-        background: #6c757d;
+        background: $text_secondary;
         border-radius: 4px;
         color: white;
         display: block;
@@ -100,7 +107,7 @@
 
         &--new {
             background: none;
-            color: #007bff;
+            color: $blue;
             display: block;
             width: fit-content;
             margin: 0;
@@ -111,12 +118,16 @@
 
     &__form {
         width: 66%;
+
+        @media screen and (min-width: 0px) and (max-width: 600px) {
+            width: 100%;
+        }
     }
 
     &__textarea {
         width: 100%;
         background: #ffffff;
-        border: 1px solid #dfdfdf;
+        border: 1px solid $lightgrey;
         border-radius: 4px;
         resize: none;
         font-family: inherit;
@@ -124,7 +135,7 @@
         margin-top: 0.5em;
         padding: 8px 16px;
         font-size: 20px;
-        color: #6c757d;
+        color: $text_secondary;
         margin-bottom: 40px;
     }
 

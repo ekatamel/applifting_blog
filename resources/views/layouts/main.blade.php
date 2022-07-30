@@ -23,11 +23,6 @@
   <script>
 
     const loggedUser = {!! auth()->user()->toJson() !!};
-    console.log(loggedUser)
-
-    // Navigation
-
-
 
     const menu = document.querySelector(".navigation__menu")
     const menuContent = document.querySelector(".navigation__dropcontent")

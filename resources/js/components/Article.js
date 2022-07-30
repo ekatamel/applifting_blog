@@ -33,7 +33,12 @@ function Article({ data }) {
             )}
 
             <div className="article__description">
-                <h2 className="article__title">{title}</h2>
+                <a
+                    className="article__link article__link--black"
+                    href={`/articles/${id}`}
+                >
+                    <h2 className="article__title">{title}</h2>
+                </a>
                 <p className="article__details">
                     {user.name}
                     <span>&#183;</span>

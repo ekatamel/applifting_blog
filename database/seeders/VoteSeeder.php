@@ -16,6 +16,7 @@ class VoteSeeder extends Seeder
      */
     public function run()
     {
+      DB::table("votes")->truncate();
         $votes = [
           [
             "user_id" => 1,

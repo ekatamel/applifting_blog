@@ -23,13 +23,11 @@ function Comment({ comment, votesCount, loadComments }) {
             });
             loadComments();
         } catch (error) {
-            // console.log(error.response);
             setErrors(error.response.data.errors);
         }
     };
 
-    // useFirstRender();
-
+    // Whenever votes number is updated, send the vote to DB (excluding first component rendering)
     useEffect(() => {
         if (!firstRender) {
             sendVotes();

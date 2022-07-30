@@ -3,7 +3,7 @@
     column-gap: 24px;
     flex-direction: row;
 
-    @media screen and (max-width: 1059px) {
+    @media screen and (max-width: 1000px) {
         flex-direction: column;
         row-gap: 24px;
         width: 272px;
@@ -66,7 +66,7 @@
     }
 
     &__details {
-        color: #6c757d;
+        color: $text_secondary;
         font-size: 14px;
         display: inline-block;
         display: flex;
@@ -97,16 +97,22 @@
 
     &__link {
         text-decoration: none;
-        color: #007bff;
+        color: $blue;
         font-size: 14px;
         padding: 4px 0px 4px 8px;
         margin-top: 1em;
         display: inline-block;
+
+        &--black {
+            color: black;
+            padding: 0;
+            margin: 0;
+        }
     }
 
     &__comments {
         font-size: 14px;
-        color: #6c757d;
+        color: $text_secondary;
         display: inline-block;
         margin-left: 19px;
     }

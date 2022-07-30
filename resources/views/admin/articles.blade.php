@@ -7,7 +7,7 @@
 <a class="articles__button" href="{{route("articles.create")}}">Create new article</a>
 </div>
 
-
+<div class="articles__table-container">
 <table class="articles__table">
   <tr style="width: 100%;">
     <th style="width: 21.8%;"><p class="articles__head">Article title<img src="/images/icons/sorting.png" alt="Sorting icon"></p></th>
@@ -44,6 +44,7 @@
   </tr>
   @endforeach
 </table>
+</div>
 </div>
 
 

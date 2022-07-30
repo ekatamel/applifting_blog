@@ -7,11 +7,11 @@ import ReactDOM from "react-dom/client";
 function ArticleList() {
     const [articles, setArticles] = useState(null);
 
+    // Load all articles
     const loadArticles = async () => {
         const response = await axios.get("/api/articles");
         const responseData = response.data;
         setArticles(responseData);
-        // console.log(responseData);
     };
 
     useEffect(() => {

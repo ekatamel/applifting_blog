@@ -7,23 +7,24 @@ import CommentList from "./CommentList";
 import ReactMarkdown from "react-markdown";
 
 function ArticleDetail() {
+    // Get the id from URL
     const { id } = useParams();
 
     const [article, setArticle] = useState(null);
     const [relatedArticles, setRelatedArticles] = useState(null);
 
+    // Load the article details
     const loadArticle = async () => {
         const response = await axios.get(`/api/articles/${id}`);
         const responseData = response.data;
         setArticle(responseData);
         // console.log(responseData);
     };
-
+    // Load related articles
     const loadRelatedArticles = async () => {
         const response = await axios.get(`/api/articles/cat`);
         const responseData = response.data;
         setRelatedArticles(responseData);
-        // console.log(responseData);
     };
 
     useEffect(() => {

@@ -10,19 +10,15 @@ class ImageController extends Controller
 
     public function destroy($id)
     {
-        // find the contact
+        // Find the image in DB
         $image = Image::findOrFail($id);
 
-        // Croppa::delete($image->path);
-
-        // delete the entry from the DB
+        // Delete teh image from DB
         $image->delete();
 
         session()->flash('success_message', 'Success, image deleted!');
 
         return redirect()->back();
 
-        // redirect to the list of available contacts
-        // return redirect( route('image-index') );
     }
 }

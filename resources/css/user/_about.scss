@@ -1,6 +1,6 @@
 .about {
-    margin-top: 48px;
-    padding: 0 228px;
+    margin: 3rem 0;
+    padding: 0 14%;
 
     &__box {
         width: 350px;
@@ -28,10 +28,13 @@
         font-size: 40px;
         font-weight: 500;
         margin: 1rem 0 3rem 0;
+        @media screen and (max-width: 712px) {
+            font-size: 2rem;
+        }
     }
 
     &__subtitle {
-        color: #1a7bff;
+        color: $blue;
         font-size: 1.9rem;
         margin-bottom: 3rem;
     }
@@ -49,6 +52,10 @@
     &__item {
         display: flex;
         align-items: center;
+
+        @media screen and (max-width: 364px) {
+            font-size: 0.8em;
+        }
     }
 
     &__icon {

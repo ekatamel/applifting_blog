@@ -12,6 +12,7 @@ body {
 *:after {
     box-sizing: border-box;
 }
+@import "./varibles";
 @import "./admin/mixins";
 @import "./admin/navigation";
 @import "./admin/login";
