@@ -16,8 +16,8 @@ class ArticleController extends Controller
                         ->where("user_id", "=", Auth::user()->id)
                         ->get();
 
-      dump(base_path());
-      dump(public_path());
+      // dump(base_path());
+      // dump(public_path());
 
       return view("admin/articles", compact("articles"));
     }
@@ -72,13 +72,14 @@ class ArticleController extends Controller
       if ($request->file('uploaded_file')) {
         $image_name = $request->file('uploaded_file')->getClientOriginalName();
 
-        $request->file('uploaded_file')->move(
-        public_path('/images/articles/'), 
-        $image_name
-
         // $request->file('uploaded_file')->move(
-        //   base_path('/public/images/articles/'), 
-        //   $image_name
+        // public_path('/images/articles/'), 
+        // $image_name
+
+        $request->file('uploaded_file')->move(
+          '/home/u843963702/domains/ekaterinamelnichuk.com/public_html/blog/images/articles/', 
+          $image_name
+
 
     );
 
