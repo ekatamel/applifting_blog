@@ -15,6 +15,8 @@ class ArticleController extends Controller
                         ->with("comments", "user")
                         ->where("user_id", "=", Auth::user()->id)
                         ->get();
+
+      dd(base_path());
       return view("admin/articles", compact("articles"));
     }
 
@@ -71,6 +73,12 @@ class ArticleController extends Controller
         $request->file('uploaded_file')->move(
         public_path('/images/articles/'), 
         $image_name
+
+        // $request->file('uploaded_file')->move(
+        //   "../", 
+        //   $image_name
+
+
     );
 
       $image = new Image;
