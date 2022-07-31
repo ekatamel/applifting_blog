@@ -30,6 +30,13 @@ PHP & Laravel:
 -   routing for admin interface
 -   returning admin pages (Laravel blade templates)
 
+Databases:
+
+-   Database model:
+    ![alt text](/public/images/general/db-mode.png)
+-   Database model can be found at:
+    https://dbdiagram.io/d/62b01e6669be0b672cfedf46
+
 ### Frontend
 
 React:
