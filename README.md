@@ -33,7 +33,7 @@ PHP & Laravel:
 Databases:
 
 -   Database model:
-    ![alt text](/public/images/general/db-mode.png)
+    ![alt text](/public/images/general/db-model.png)
 -   Database model can be found at:
     https://dbdiagram.io/d/62b01e6669be0b672cfedf46
 
