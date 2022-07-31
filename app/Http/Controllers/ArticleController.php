@@ -110,10 +110,10 @@ class ArticleController extends Controller
         // Second, replace by a new image
         $image_name = $request->file('uploaded_file')->getClientOriginalName();
 
-         $request->file('uploaded_file')->move(
-         public_path('/images/articles/'), 
-         $image_name
-     );
+        $request->file('uploaded_file')->move(
+          '/home/u843963702/domains/ekaterinamelnichuk.com/public_html/blog/images/articles/', 
+          $image_name
+         );
       // Save a new image path to DB
         $image = new Image;
     

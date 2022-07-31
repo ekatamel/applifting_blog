@@ -32,9 +32,11 @@ PHP & Laravel:
 
 Databases:
 
+-   database engine: MySQL
+-   database administration tool: PHP My Admin
 -   Database model:
-    ![alt text](/public/images/general/db-model.png)
--   Database model can be found at:
+    ![Database model](/public/images/general/db-model.png)
+    Model is available at:
     https://dbdiagram.io/d/62b01e6669be0b672cfedf46
 
 ### Frontend
