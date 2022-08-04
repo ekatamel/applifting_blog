@@ -1,38 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Moment from "react-moment";
-import useFirstRender from "./FirstRender";
 
 function Comment({ comment, votesCount, loadComments }) {
     const { content, created_at: date, user, votes, id } = comment;
-    const [votesNumber, setVotesNumber] = useState(votes);
-    const [voteValue, setVoteValue] = useState(null);
+
+    const [votesNumber, setVotesNumber] = useState(votesCount);
     const [errors, setErrors] = useState(null);
     const [loginError, setLoginError] = useState(null);
-
-    const firstRender = useFirstRender();
-
-    const sendVotes = async () => {
-        try {
-            const response = await axios.post(`/api/comments/${id}/votes`, {
-                votes: votesNumber,
-                user_id: loggedUser.id,
-                value: voteValue,
-            });
-            loadComments();
-        } catch (error) {
-            setErrors(error.response.data.errors);
-        }
-    };
-
-    // Whenever votes number is updated, send the vote to DB (excluding first component rendering)
-    useEffect(() => {
-        if (!firstRender) {
-            sendVotes();
-        }
-    }, [votesNumber]);
 
     return (
         <div className="comment">
@@ -53,14 +30,26 @@ function Comment({ comment, votesCount, loadComments }) {
                         className="comment__arrow"
                         src="/images/icons/arrow-up.png"
                         alt="Arrow icon"
-                        onClick={() => {
+                        onClick={async () => {
                             if (typeof loggedUser == "undefined") {
                                 setLoginError(
-                                    "You have to be logged in to vote"
+                                    "You have to be logged in order to vote"
                                 );
                             } else {
-                                setVotesNumber(votesNumber + 1);
-                                setVoteValue(1);
+                                try {
+                                    const response = await axios.post(
+                                        `/api/comments/${id}/votes`,
+                                        {
+                                            votes: votes + 1,
+                                            user_id: loggedUser.id,
+                                            value: 1,
+                                        }
+                                    );
+                                    setVotesNumber(votesNumber + 1);
+                                    loadComments();
+                                } catch (error) {
+                                    setErrors(error.response.data.errors);
+                                }
                             }
                         }}
                     />
@@ -68,9 +57,27 @@ function Comment({ comment, votesCount, loadComments }) {
                         className="comment__arrow"
                         src="/images/icons/arrow-down.png"
                         alt="Arrow icon"
-                        onClick={() => {
-                            setVotesNumber(votesNumber - 1);
-                            setVoteValue(-1);
+                        onClick={async () => {
+                            if (typeof loggedUser == "undefined") {
+                                setLoginError(
+                                    "You have to be logged in order to vote"
+                                );
+                            } else {
+                                try {
+                                    const response = await axios.post(
+                                        `/api/comments/${id}/votes`,
+                                        {
+                                            votes: votes - 1,
+                                            user_id: loggedUser.id,
+                                            value: -1,
+                                        }
+                                    );
+                                    setVotesNumber(votesNumber - 1);
+                                    loadComments();
+                                } catch (error) {
+                                    setErrors(error.response.data.errors);
+                                }
+                            }
                         }}
                     />
                 </div>
