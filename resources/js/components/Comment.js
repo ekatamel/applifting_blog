@@ -4,10 +4,9 @@ import { useState } from "react";
 import axios from "axios";
 import Moment from "react-moment";
 
-function Comment({ comment, votesCount, loadComments }) {
-    const { content, created_at: date, user, votes, id } = comment;
+function Comment({ comment, votesValue, loadComments }) {
+    const { content, created_at: date, user, id } = comment;
 
-    const [votesNumber, setVotesNumber] = useState(votesCount);
     const [errors, setErrors] = useState(null);
     const [loginError, setLoginError] = useState(null);
 
@@ -24,7 +23,7 @@ function Comment({ comment, votesCount, loadComments }) {
                 <p className="comment__text">{content}</p>
                 <div className="comment__voting">
                     <span className="comment__votes">
-                        {votesCount > 0 ? `+${votesCount}` : votesCount}
+                        {votesValue > 0 ? `+${votesValue}` : votesValue}
                     </span>
                     <img
                         className="comment__arrow"
@@ -40,12 +39,11 @@ function Comment({ comment, votesCount, loadComments }) {
                                     const response = await axios.post(
                                         `/api/comments/${id}/votes`,
                                         {
-                                            votes: parseInt(votes) + 1,
+                                            votes: parseInt(votesValue) + 1,
                                             user_id: loggedUser.id,
                                             value: 1,
                                         }
                                     );
-                                    setVotesNumber(votesNumber + 1);
                                     loadComments();
                                 } catch (error) {
                                     setErrors(error.response.data.errors);
@@ -67,12 +65,11 @@ function Comment({ comment, votesCount, loadComments }) {
                                     const response = await axios.post(
                                         `/api/comments/${id}/votes`,
                                         {
-                                            votes: parseInt(votes) - 1,
+                                            votes: parseInt(votesValue) - 1,
                                             user_id: loggedUser.id,
                                             value: -1,
                                         }
                                     );
-                                    setVotesNumber(votesNumber - 1);
                                     loadComments();
                                 } catch (error) {
                                     setErrors(error.response.data.errors);
