@@ -40,7 +40,7 @@ function Comment({ comment, votesCount, loadComments }) {
                                     const response = await axios.post(
                                         `/api/comments/${id}/votes`,
                                         {
-                                            votes: votes + 1,
+                                            votes: parseInt(votes) + 1,
                                             user_id: loggedUser.id,
                                             value: 1,
                                         }
@@ -67,7 +67,7 @@ function Comment({ comment, votesCount, loadComments }) {
                                     const response = await axios.post(
                                         `/api/comments/${id}/votes`,
                                         {
-                                            votes: votes - 1,
+                                            votes: parseInt(votes) - 1,
                                             user_id: loggedUser.id,
                                             value: -1,
                                         }
