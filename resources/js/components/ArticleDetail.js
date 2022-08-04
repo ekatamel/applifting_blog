@@ -59,7 +59,6 @@ function ArticleDetail() {
                                 <p>No image available</p>
                             </div>
                         )}
-                        {/* <p className="article__content">{article.content}</p> */}
                         <p className="article__content">
                             <ReactMarkdown>{article.content}</ReactMarkdown>
                         </p>

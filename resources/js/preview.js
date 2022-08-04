@@ -4,8 +4,6 @@ const input = document.querySelector("#file");
 const preview = document.querySelector(".preview");
 const previousImage = document.querySelector(".articles__image");
 
-console.log(previousImage);
-
 input.addEventListener("change", updateImageDisplay);
 
 const fileTypes = [

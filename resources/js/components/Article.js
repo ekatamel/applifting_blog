@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Moment from "react-moment";
-import markdownToTxt from "markdown-to-txt";
 
 function Article({ data }) {
     const {
@@ -45,7 +44,7 @@ function Article({ data }) {
                     <Moment format="MM/DD/YY">{publishDate}</Moment>
                 </p>
 
-                <p className="article__perex">{markdownToTxt(perex)}</p>
+                <p className="article__perex">{perex}</p>
                 <a className="article__link" href={`/articles/${id}`}>
                     Read whole article
                 </a>

@@ -40,28 +40,8 @@ Route::delete("/articles/{id}", [
   ArticleController::class, "destroy"
 ])->whereNumber("id")->name("articles.destroy");
 
-// Image routes
-
-// Route::post(
-//   '/images', [
-//     ImageController::class,'store'
-//   ])->name('image.store');
-
 Route::get(
   '/images/{id}', [
     ImageController::class,'destroy'
   ])->name('image.destroy');
-
-
-  // Route::post(
-  //   '/images', [
-  //     ArticleController::class,'store'
-  //   ])->name('image.store');
-  
-  // Route::delete(
-  //   '/images/{id}', [
-  //     ArticleController::class,'destroy'
-  //   ])->name('image.delete');
-
-
 

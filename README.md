@@ -89,6 +89,9 @@ API documentation is available at : https://app.swaggerhub.com/apis-docs/KATERIN
 -   Adding admin homepage with statistics about user activity (number of blog posts, user engagement etc.)
 -   Implement articles sorting alphabetically or based on the date (https://blog.ekaterinamelnichuk.com/admin/articles)
 -   Disable voting on own comments
+-   Handle situations when there are no articles published or related articles exist (display information that no articles exist and prompt user to create a new one)
+-   Remove unused libraries from package.json file(e.g. markdown-to-text)
+-   Reduce number of API calls (to get article detail, to get comments for the article etc.), rather pass the data from parent (containing all article information) to children via props (or using React context)
 
 ## Domain & hosting
 
