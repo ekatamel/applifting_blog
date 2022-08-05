@@ -99,7 +99,7 @@ function CommentList({ articleId }) {
                             <Comment
                                 key={index}
                                 comment={comment}
-                                votesValue={comment.votes}
+                                // votesValue={comment.votes}
                                 loadComments={loadComments}
                             />
                         );

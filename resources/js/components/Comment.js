@@ -4,8 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import Moment from "react-moment";
 
-function Comment({ comment, votesValue, loadComments }) {
-    const { content, created_at: date, user, id } = comment;
+function Comment({ comment, loadComments }) {
+    const { content, created_at: date, user, id, votes } = comment;
 
     const [errors, setErrors] = useState(null);
     const [loginError, setLoginError] = useState(null);
@@ -23,7 +23,7 @@ function Comment({ comment, votesValue, loadComments }) {
                 <p className="comment__text">{content}</p>
                 <div className="comment__voting">
                     <span className="comment__votes">
-                        {votesValue > 0 ? `+${votesValue}` : votesValue}
+                        {votes > 0 ? `+${votes}` : votes}
                     </span>
                     <img
                         className="comment__arrow"
@@ -39,7 +39,7 @@ function Comment({ comment, votesValue, loadComments }) {
                                     const response = await axios.post(
                                         `/api/comments/${id}/votes`,
                                         {
-                                            votes: parseInt(votesValue) + 1,
+                                            votes: parseInt(votes) + 1,
                                             user_id: loggedUser.id,
                                             value: 1,
                                         }
@@ -65,7 +65,7 @@ function Comment({ comment, votesValue, loadComments }) {
                                     const response = await axios.post(
                                         `/api/comments/${id}/votes`,
                                         {
-                                            votes: parseInt(votesValue) - 1,
+                                            votes: parseInt(votes) - 1,
                                             user_id: loggedUser.id,
                                             value: -1,
                                         }
