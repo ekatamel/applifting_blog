@@ -83,7 +83,6 @@ API documentation is available at : https://app.swaggerhub.com/apis-docs/KATERIN
 ## Possible impovements
 
 -   Create article form - retrieving old image from previous request, if form validation fails (currently the user has to upload the same image again)
--   Enable outside registrations - currenty outside registration are disabled and only existing registered users can login
 -   Implement nested comments
 -   Add fulltext search of related articles based on the main article keyword. Currenly keyword "cat" is hardcoded inside API URL (/articles/{keyword}) and fulltext search is done in articles title. As a potential future impovement, related articles could be retrieved dynamically based on article categories/tags keywords
 -   Adding admin homepage with statistics about user activity (number of blog posts, user engagement etc.)
@@ -97,6 +96,6 @@ API documentation is available at : https://app.swaggerhub.com/apis-docs/KATERIN
 
 The website is hosted on Hostinger hosting provider on my personal domain ekaterinamelnichuk.com (blog subdomain).
 
-## Domain & hosting
+## User accounts
 
 User accounts (for article creation/publication) are available for testing upon request.

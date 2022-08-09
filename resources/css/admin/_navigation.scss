@@ -59,6 +59,10 @@
             display: flex;
         }
 
+        &--dark {
+            color: #00008b;
+        }
+
         display: block;
         @media screen and (max-width: 825px) {
             display: none;

@@ -10,7 +10,8 @@
 
   <div class="navigation--right">
       @guest
-      <a class="navigation__link navigation__link--blue" href="/login">Log in<img class="navigation__icon" src="/images/icons/arrow.png" alt=""></a>   
+      <a class="navigation__link navigation__link--blue" href="/login">Log in<img class="navigation__icon" src="/images/icons/arrow.png" alt=""></a>  
+      <a class="navigation__link navigation__link--blue navigation__link--dark" href="/register">Register<img class="navigation__icon" src="/images/icons/arrow-blue.png" alt=""></a>    
       @endguest
 
       {{-- Dropdown content for small screens --}}
@@ -43,7 +44,10 @@
       <div class="navigation__dropdown">
         <div class="navigation__profile">
           <img src="/images/icons/arrow-bottom.png" alt="Arrow icon">
+          @if (Auth::user()->path)
           <img class="navigation__avatar" src="{{ Auth::user()->path }}" alt="{{ Auth::user()->name }} avatar">
+          @else <img class="navigation__avatar" src="/images/avatars/guest.png" alt="{{ Auth::user()->name }} avatar">
+          @endif
         </div>
         <div class="navigation__dropcontent">
           @auth
