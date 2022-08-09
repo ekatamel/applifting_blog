@@ -19,6 +19,11 @@
         margin: 5px 0 0 0;
     }
 
+    &__avatar {
+        width: 44px;
+        height: 44px;
+    }
+
     &__time {
         font-size: 14px;
         color: $text_secondary;

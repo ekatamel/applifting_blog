@@ -59,11 +59,20 @@ function CommentList({ articleId }) {
                         </>
                     ) : (
                         <>
-                            <img
-                                className="comment__avatar"
-                                src={loggedUser.path}
-                                alt={loggedUser.name}
-                            />
+                            {loggedUser.path ? (
+                                <img
+                                    className="comment__avatar"
+                                    src={loggedUser.path}
+                                    alt={loggedUser.name}
+                                />
+                            ) : (
+                                <img
+                                    className="comment__avatar"
+                                    src="/images/avatars/guest.png"
+                                    alt={loggedUser.name}
+                                />
+                            )}
+
                             <div className="comment__content">
                                 <form
                                     action="/api/comments"

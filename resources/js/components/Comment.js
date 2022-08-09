@@ -12,7 +12,20 @@ function Comment({ comment, loadComments }) {
 
     return (
         <div className="comment">
-            <img className="comment__avatar" src={user.path} alt={user.name} />
+            {user.path ? (
+                <img
+                    className="comment__avatar"
+                    src={user.path}
+                    alt={user.name}
+                />
+            ) : (
+                <img
+                    className="comment__avatar"
+                    src="/images/avatars/guest.png"
+                    alt={user.name}
+                />
+            )}
+
             <div className="comment__content">
                 <p className="comment__user">
                     {user.name}
